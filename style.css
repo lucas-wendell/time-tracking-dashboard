@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+	/* primary Colors */
+
+	--blue-blue: hsl(246, 80%, 60%);
+	--red-workColor: hsl(15, 100%, 70%);
+	--blue-playColor: hsl(195, 74%, 62%);
+	--red-studyColor: hsl(348, 100%, 68%);
+	--green-exerciseColor: hsl(145, 58%, 55%);
+	--violet-socialColor: hsl(264, 64%, 52%);
+	--orange-SelfCareColor: hsl(43, 84%, 65%);
+
+	/* neutral Colors */
+	--blue-veryDarkBlue: hsl(226, 43%, 10%);
+	--blue-darkBlue: hsl(235, 46%, 20%);
+	--blue-desaturatedBlue: hsl(235, 45%, 61%);
+	--blue-paleBlue: hsl(236, 100%, 87%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Rubik', sans-serif;
+}
+
+body {
+	background-color: var(--blue-veryDarkBlue);
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main {
+	height: 400px;
+	width: 850px;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.main .aside {
+	background-color: var(--blue-darkBlue);
+	border-radius: 10px;
+	grid-row: 1 / 3;
+}
+
+.main .aside .infosProfile {
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 70%;
+	padding: 20px;
+	background-color: var(--blue-blue);
+}
+
+.main .aside .infosProfile img {
+	border: 2px solid #fff;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+}
+
+.main .aside .infosProfile h2 {
+	font-weight: 300;
+	color: #fff;
+	font-size: 2em;
+}
+
+.main .aside .infosProfile span {
+	color: var(--blue-paleBlue);
+	font-size: 0.5em;
+	display: block;
+}
+
+.main .aside .timeframesDiv {
+	display: flex;
+	color: var(--blue-paleBlue);
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+.main .aside .timeframesDiv p {
+	margin-bottom: 10px;
+}
+
+.main .aside .timeframesDiv p:hover {
+	cursor: pointer;
+	color: #fff;
+}
+
+.main .sectionCard {
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.main .sectionCard figure {
+	position: absolute;
+	top: 0;
+	padding-right: 10px;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	background-color: var(--red-workColor);
+}
+
+.main .playSection figure {
+	background-color: var(--blue-playColor);
+}
+
+.main .studySection figure {
+	background-color: var(--red-studyColor);
+}
+
+.main .exerciseSection figure {
+	background-color: var(--green-exerciseColor);
+}
+
+.main .socialSection figure {
+	background-color: var(--violet-socialColor);
+}
+
+.main .selfCareSection figure {
+	background-color: var(--orange-SelfCareColor);
+}
+
+.main .sectionCard figure img {
+	height: 50px;
+	width: 50px;
+}
+
+.main .sectionCard .timeDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	z-index: 100;
+	border-radius: 10px;
+	height: 80%;
+	color: #fff;
+	padding: 10px;
+	background-color: var(--blue-darkBlue);
+}
+
+.main .sectionCard .timeDiv:hover {
+	cursor: pointer;
+	background-color: var(--blue-desaturatedBlue);
+}
+
+.main .sectionCard .timeDiv .title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.main .sectionCard .timeDiv .textTimeDiv h3 {
+	margin-top: 15px;
+	font-size: 2.5em;
+	font-weight: 300;
+}
+
+.main .sectionCard .timeDiv .textTimeDiv p {
+	font-size: 0.7em;
+	color: var(--blue-paleBlue);
+}
