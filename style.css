@@ -87,6 +87,11 @@ body {
 
 .main .aside .timeframesDiv p {
 	margin-bottom: 10px;
+	transition: color 0.8s;
+}
+
+.main .aside .timeframesDiv p.active {
+	color: #fff;
 }
 
 .main .aside .timeframesDiv p:hover {
