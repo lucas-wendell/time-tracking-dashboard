@@ -36,6 +36,7 @@ body {
 .main {
 	height: 400px;
 	width: 850px;
+	margin: 0 20px;
 	display: grid;
 	gap: 20px;
 	grid-template-columns: repeat(4, 1fr);
@@ -175,4 +176,70 @@ body {
 .main .sectionCard .timeDiv .textTimeDiv p {
 	font-size: 0.7em;
 	color: var(--blue-paleBlue);
+}
+
+/* medias */
+
+@media (max-width: 750px) {
+	.main .aside .infosProfile {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.main .aside .timeframesDiv {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.main .sectionCard .timeDiv .textTimeDiv {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.main .sectionCard .timeDiv .textTimeDiv h3 {
+		margin: 0;
+	}
+
+	.main .aside .timeframesDiv p {
+		margin-bottom: 0;
+	}
+
+	.main .aside {
+		grid-row: 1;
+	}
+
+	.main {
+		height: 100vh;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+	}
+
+	.main .sectionCard {
+		min-height: 150px;
+	}
+}
+
+@media (max-width: 410px) {
+	.main .aside .timeframesDiv {
+		padding: 10px;
+	}
+	.main .aside .infosProfile {
+		justify-content: space-evenly;
+		padding: 10px 0;
+	}
+
+	.main .aside .infosProfile h2 {
+		font-size: 1.5rem;
+	}
+
+	.main .aside .infosProfile span {
+		font-size: 0.5em;
+	}
+
+	.main .aside .infosProfile img {
+		width: 60px;
+		height: 60px;
+	}
 }

@@ -17,7 +17,7 @@ const getData = async () => {
 	return data;
 };
 
-const turnWhite = (target, name) => {
+const makeTargetWhite = (target, name) => {
 	target.classList.add('active');
 
 	timeframeParagraph.forEach(item => {
@@ -27,17 +27,18 @@ const turnWhite = (target, name) => {
 	});
 };
 
-const executeForEachInDOMItems = (DOMItems, data, timeframe, hoursType) => {
+const addHoursTextInDom = (DOMItems, data, timeframe, hoursType) => {
 	DOMItems.forEach((item, index) => {
 		const hours = data[index].timeframes[timeframe][hoursType];
-		const text = item.tagName === 'P' ? 'Last Week - ' : '';
-		item.textContent = `${text}${hours}hrs`;
+		const concatenationText = item.tagName === 'P' ? 'Last Week - ' : '';
+
+		item.textContent = `${concatenationText}${hours}hrs`;
 	});
 };
 
 const addDataInDom = (data, timeframe) => {
-	executeForEachInDOMItems(hoursH3, data, timeframe, 'current');
-	executeForEachInDOMItems(lastWeekHoursParagraph, data, timeframe, 'previous');
+	addHoursTextInDom(hoursH3, data, timeframe, 'current');
+	addHoursTextInDom(lastWeekHoursParagraph, data, timeframe, 'previous');
 };
 
 const actions = {
@@ -45,7 +46,7 @@ const actions = {
 		const timeframe = target.getAttribute('timeframeValue');
 		const data = await getData();
 
-		turnWhite(target, timeframe);
+		makeTargetWhite(target, timeframe);
 		addDataInDom(data, timeframe);
 	},
 };
@@ -54,7 +55,7 @@ const accessActions = target => {
 	const nameFunction = target.getAttribute('data-js');
 
 	const func = actions[nameFunction];
-	func?.call(actions, target);
+	func?.(target);
 };
 
 actions.clickTimeFrame(daily);
