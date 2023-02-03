@@ -24,4 +24,4 @@ O projeto consiste em uma dashboard que mostra quanto tempo o usuário fictício
 
 ![img](./images/desktop-preview.jpg)
 
-## **_[Visualize o Projeto](https://l-wendell.github.io/time-tracking-dashboard/)_**
+## **_[Visualize o Projeto](https://lucas-wendell.github.io/time-tracking-dashboard/)_**
